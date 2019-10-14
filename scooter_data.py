@@ -23,7 +23,6 @@ def main():
     opTimeSum = scooterDF.loc[:, 'Operation_Time'].sum()
     return opTimeSum
     
-    '''
     x = scooterDF.loc[:, 'xcoordinate']
     y = scooterDF.loc[:, 'ycoordinate']
     
@@ -32,4 +31,3 @@ def main():
     plt.ylabel('y coordinate') # add y label
     plt.scatter(x,y)
     plt.show()
-    '''
