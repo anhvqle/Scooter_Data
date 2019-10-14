@@ -6,7 +6,6 @@ This is a temporary script file.
 """
 import pandas as pd
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import axes3d, Axes3D
 
 def readScooterData(numRows = None):
     df = pd.read_csv("xtern_data.csv", nrows=numRows)
@@ -19,8 +18,12 @@ def main():
     
     opTime = scooterDF.loc[:,"power_level"].map(lambda x: 5-x)
     scooterDF["Operation_Time"] = opTime
-    return scooterDF
+    #return scooterDF
+    #scooterDF.to_csv("scooterDataWithOpTime.csv", index=False)
+    opTimeSum = scooterDF.loc[:, 'Operation_Time'].sum()
+    return opTimeSum
     
+    '''
     x = scooterDF.loc[:, 'xcoordinate']
     y = scooterDF.loc[:, 'ycoordinate']
     
@@ -29,3 +32,4 @@ def main():
     plt.ylabel('y coordinate') # add y label
     plt.scatter(x,y)
     plt.show()
+    '''
